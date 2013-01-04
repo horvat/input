@@ -1,0 +1,45 @@
+# SEAICE parameters
+ &SEAICE_PARM01
+#- old DIFF1 default:
+# DIFF1 = 4.E-1,
+#- to reproduce old results with former #defined SEAICE_SOLVE4TEMP_LEGACY code
+#  useMaykutSatVapPoly = .TRUE.,
+#  postSolvTempIter  =  0,
+# SEAICE_dryIceAlb   = 0.8756,
+# SEAICE_wetIceAlb   = 0.7856,
+# SEAICE_drySnowAlb  = 0.9656,
+# SEAICE_wetSnowAlb  = 0.8256,
+# SEAICE_strength    = 2.6780e+04,
+# SEAICE_waterDrag   = 5.3508,
+ SEAICEuseDYNAMICS  =.TRUE.,
+# LSR_ERROR          = 1.E-10,
+ SEAICEadvSnow      = .TRUE.,
+ SEAICEadvSalt      = .FALSE.,
+# SEAICEuseFlooding  = .TRUE.,
+ SEAICE_no_Slip     = .FALSE.,
+# SEAICE_saltFrac    = 0.3,
+# SEAICE_tempFrz0    = -1.96,
+# SEAICE_dTempFrz_dS = 0.,
+# SEAICE_mcPheePiston= 0.00003858024691358025,
+# SEAICE_frazilFrac  = 0.33333333333333333333,
+#  AreaFile           = 'SI_Area_hole.bin',
+# HsnowFile          = 'HSNOW.seaice_obcs',
+# HsaltFile          = 'HSALT.seaice_obcs',
+# AreaFile           = 'Ice_Area.bin',
+ AreaFile           = ' ',
+ HsnowFile          = ' ',
+ HsaltFile          = ' ',
+ HeffFile            = ' ',
+# HeffFile           = 'Ice_Eff.bin',
+# HeffFile           = 'SI_Heff_hole.bin',
+# IceAgeFile         = 'SI_Age_hole.bin', 
+  SEAICEwriteState   = .TRUE.,
+# For backward compatibility only:
+# emissivities should be inherited from exf and setting them here does
+# not set a good example
+# SEAICE_snow_emiss     = 0.97001763668430343479,
+# SEAICE_ice_emiss      = 0.97001763668430343479,
+ &
+
+ &SEAICE_PARM03
+ &

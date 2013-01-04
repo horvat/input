@@ -1,0 +1,148 @@
+#
+# *********************
+# External Forcing Data
+# *********************
+ &EXF_NML_01
+#
+ useExfCheckRange  = .FALSE.,
+ repeatPeriod      = 86400,
+ exf_iprec         = 64,
+#
+ &
+
+# *********************
+ &EXF_NML_02
+#
+ hfluxstartdate1   = 19781216,
+ hfluxstartdate2   = 0,
+ hfluxperiod       = 3600.0,
+#
+ sfluxstartdate1   = 19781216,
+ sfluxstartdate2   = 0,
+ sfluxperiod       = 3600.0,
+#
+ ustressstartdate1 = 19781216,
+ ustressstartdate2 = 0,
+  ustressperiod     = 3600.0,
+#
+ vstressstartdate1 = 19781216,
+ vstressstartdate2 = 0,
+ vstressperiod     = 3600.0,
+#
+ atempstartdate1   = 19781216,
+ atempstartdate2   = 0,
+ atempperiod       = 604800,
+#
+ aqhstartdate1     = 19781216,
+ aqhstartdate2     = 0,
+ aqhperiod         = 302400.0,
+#
+#evapstartdate1    = 19781216,
+#evapstartdate2    = 0,
+#evapperiod        = 3600.0,
+#
+ precipstartdate1  = 19781216,
+ precipstartdate2  = 0,
+ precipperiod      = 3600.0,
+#
+ uwindstartdate1   = 19781216,
+ uwindstartdate2   = 0,
+ uwindperiod       = 302400.0,
+#
+ vwindstartdate1   = 19781216,
+ vwindstartdate2   = 0,
+ vwindperiod       = 302400.0,
+#
+ swfluxstartdate1  = 19781216,
+ swfluxstartdate2  = 0,
+ swfluxperiod      = 302400.0,
+#
+ lwfluxstartdate1  = 19781216,
+ lwfluxstartdate2  = 0,
+ lwfluxperiod      = 302400.0,
+#
+ swdownstartdate1  = 19781216,
+ swdownstartdate2  = 0,
+ swdownperiod      = 3600.0,
+#
+ lwdownstartdate1  = 19781216,
+ lwdownstartdate2  = 0,
+ lwdownperiod      = 3600.0,
+#
+ climsststartdate1  = 19781216,
+ climsststartdate2  = 0,
+ climsstperiod      = 3600.0,
+ climsstTauRelax    = 0.0,
+#
+ climsssstartdate1  = 19781216,
+ climsssstartdate2  = 0,
+ climsssperiod      = 3600.0,
+# climsssTauRelax    = 4142330.0,
+#
+# hfluxfile         = ' ',
+# sfluxfile         = ' ',
+# ustressfile       = ' ',
+# vstressfile       = ' ',
+ atempfile         = 'AirT.bin',
+ aqhfile           = 'AirAQ.bin',
+ uwindfile         = 'AirU_weak.bin',
+ vwindfile         = 'AirV.bin',
+# uwindfile         = ' ',
+# vwindfile         = ' ',
+  precipfile        = '',
+ lwfluxfile        = 'LWupdiurn.bin',
+# lwfluxfile        = ' ',
+# swfluxfile        = 'SW_hole_flux.bin',
+  lwdownfile        = ' ',
+#  swdownfile        = ' ',
+  swdownfile        = 'SWdowndiurn.bin',
+  runoffFile        = '',
+# SW is always zero here so thats why I put the required files as that.
+# climsstfile       = ' ',
+# climsssfile       = ' ',
+ &
+
+# *********************
+ &EXF_NML_03
+ exf_offset_atemp = 273.15,
+ &
+
+# *********************
+# old open64 compiler (4.2.1) cannot skip this namelist to read in the next one;
+# comment out this namelist (not read).
+#&EXF_NML_04
+#&
+
+# *********************
+ &EXF_NML_OBCS
+  obcsSstartdate1   = 19781216,
+  obcsSstartdate2   = 000000,
+  obcsSperiod       = 302400.0,
+
+  obcsNstartdate1   = 19781216,
+  obcsNstartdate2   = 000000,
+  obcsNperiod       = 302400.0,
+#
+# obcsWstartdate1   = 19790101,
+# obcsWstartdate2   = 000000,
+# obcsWperiod       = 3600.0,
+#
+# obcsEstartdate1   = 19790101,
+# obcsEstartdate2   = 000000,
+# obcsEperiod       = 3600.0,
+#
+# siobSstartdate1   = 19790101,
+# siobSstartdate2   = 000000,
+# siobSperiod       = 3600.0,
+#
+# siobNstartdate1   = 19790101,
+# siobNstartdate2   = 000000,
+# siobNperiod       = 3600.0,
+#
+# siobWstartdate1   = 19790101,
+# siobWstartdate2   = 000000,
+# siobWperiod       = 3600.0,
+ 
+# OBNtFile = 'Northtemp.OBC',
+# OBStFile = 'Southtemp.OBC',	
+&

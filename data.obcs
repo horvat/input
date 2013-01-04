@@ -1,0 +1,21 @@
+&OBCS_PARM01
+ OB_Jsouth = 120*1,
+ OB_Jnorth = 120*-1,
+ OBCSfixTopo = .TRUE.,
+ useOBCSprescribe = .TRUE.,
+# useOBCS_south = .FALSE.,
+# useOBCSsponge = .TRUE.,
+# useEXF= .TRUE.,
+#
+ OBStFile = 'Southtemp.OBC',
+ OBNtFile = 'Northtemp.OBC',
+#
+&
+
+# &OBCS_PARM02
+#
+# &
+
+# &OBCS_PARM03
+ spongeThickness = 1,
+# &

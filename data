@@ -1,0 +1,100 @@
+# ====================
+# | Model parameters |
+# ====================
+#
+# Continuous equation parameters
+ &PARM01
+# Tref = 25.,24.,23.,22.,21.,20.,19.,18.,17.,16.,15.,14.,13.,12.,11.,10.,9.,8.,7.,6.,5.,4.,3.,2.,1.,
+# Sref=10*34.76,7*34.84,8*34.875,
+# viscAz=25.E-3,
+ viscAz=1.E-4,
+ no_slip_sides=.FALSE.,
+ no_slip_bottom=.FALSE.,
+#- a trick to recover old version of side-drag:
+#sideDragFactor=0.,
+# bottomDragQuadratic=2.E-3,
+#  viscA4=0.E12,
+# viscC4Leith=1.458198138065,
+# useAreaViscLength=.TRUE.,
+# diffKhT=1.E3,
+ diffKzT=1.E-5,
+# diffKhS=1.E3,
+ diffKzS=1.E-5,
+ f0=1.0e-4,
+ beta=0,
+# beta=0.E-11,
+ tAlpha=2.E-4,
+ sBeta =7.4E-4,
+ gravity=9.81,
+ rhonil=1000.0,
+ rigidLid=.FALSE.,
+ implicitFreeSurface=.TRUE.,
+ implicitDiffusion=.TRUE.,
+ implicitViscosity=.TRUE.,
+ eosType='LINEAR',
+ hFacMin=0.2,
+ nonHydrostatic=.FALSE.,
+ vectorInvariantMomentum=.TRUE.,
+ viscC2Smag = 1,
+# viscAz=1.E-4,
+ staggerTimeStep=.TRUE.,
+ tempAdvScheme=33,
+ saltAdvScheme=33,
+ debugLevel=-1,
+ readBinaryPrec=64,
+ writeBinaryPrec=64,
+ writeStatePrec=64,
+#- not safe to use globalFiles in multi-processors runs
+#globalFiles=.TRUE.,
+ &
+
+# Elliptic solver parameters
+ &PARM02
+ cg2dMaxIters=1000,
+ cg2dTargetResidual=1.E-11,
+# cg3dMaxIters=10,
+# cg3dTargetResidual=1.E-13,
+ &
+
+# Time stepping parameters
+ &PARM03
+ nIter0=0,
+#nTimeSteps=12000,
+ nTimeSteps=1000000,
+# TIMESTEP MAY NEED TO BE DIMINISHED BELOW 600 S#
+ deltaT=300.,
+ abEps=0.1,
+ pChkptFreq=0.0,
+ chkptFreq=1500000.0,
+ dumpFreq=1200.,
+#cAdjFreq=30.,
+#monitorFreq=6000.,
+ forcing_in_AB=.FALSE.,
+ monitorFreq=60000.,
+# periodicExternalForcing=.TRUE.,
+# externForcingPeriod = 3600., 
+# externForcingCycle = 86400.,
+# monitorSelect=2, 
+&
+
+# Gridding parameters
+ &PARM04
+ usingCartesianGrid=.TRUE.,
+# delXfile='delXvar',
+# WE HAVE CHANGED TO 120x40 IN THIS RUN
+# AND HAVE DECREASED THE RESOLUTION TO BE 1KM by 1KM
+ delX=120*1000.0,
+ delY=40*1000.0,
+ delZ = 20*5.,6.,7.2,8.64,10.37,12.44,14.43,17.9,21.5,25.8,31,37.1,44.6,53.5,64.2,77.,92.4,110.9,
+ &
+
+# Input datasets
+ &PARM05
+# surfQFile='heatflux.bin',
+# surfQswFile='SWdiurn.bin',
+ hydrogThetaFile='Arctic_Temp.bin',
+ hydrogSaltFile='Arctic_Salt.bin',
+# zonalWindFile  ='xwindstress.bin',
+# meridWindFile  ='trenberth_tauy.bin',
+ bathyFile='topog.box',
+ &
